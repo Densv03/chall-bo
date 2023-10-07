@@ -43,7 +43,7 @@ export const AppRouter = () => {
     const NOT_AUTHED_USER_REDIRECTS: RedirectModel[] = [
         {
             path: '/',
-            redirectTo: '/register'
+            redirectTo: '/login'
         },
         {
             path: '*',

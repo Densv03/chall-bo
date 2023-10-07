@@ -1,0 +1,10 @@
+@import "src/styles/colors/light-theme";
+
+.input {
+  border: none;
+  outline: none;
+
+  &--white {
+    border: 2px solid $primary-border-color;
+  }
+}
