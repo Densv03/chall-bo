@@ -5,7 +5,7 @@ interface ChallButtonProps {
     children: React.ReactNode;
 }
 
-function getClassnameByKey(theme: ButtonThemeEnum): string {
+function getClassnameByTheme(theme: ButtonThemeEnum): string {
     switch (theme) {
         case ButtonThemeEnum.LIGHT_GRAY:
             return 'btn btn--light-gray'
@@ -15,6 +15,6 @@ function getClassnameByKey(theme: ButtonThemeEnum): string {
 }
 export const ChallButton: React.FC<ChallButtonProps> = ({buttonTheme, children, ...props}) => {
     return (
-        <button className={getClassnameByKey(buttonTheme)} {...props}>{children}</button>
+        <button className={getClassnameByTheme(buttonTheme)} {...props}>{children}</button>
     );
 };

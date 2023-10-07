@@ -8,7 +8,7 @@ interface ChallInputProps {
     placeholder?: string;
 }
 
-function getClassnameByKey(theme: InputThemeEnum): string {
+function getClassnameByTheme(theme: InputThemeEnum): string {
     switch (theme) {
         case InputThemeEnum.BACKGROUND_WHITE:
             return 'input input--white'
@@ -17,11 +17,15 @@ function getClassnameByKey(theme: InputThemeEnum): string {
     }
 }
 
+function getLabelClasses(labelClass?: string): string {
+    return labelClass ? `${labelClass} mb-1` : `mb-1`
+}
+
 function generateInputWithLabel(props: ChallInputProps): React.ReactElement {
     const {type, label, labelClass, theme, placeholder} = props
-    return (<div>
-        <span className={labelClass}>{label}</span>
-        <input type={type} className={getClassnameByKey(theme)} placeholder={placeholder}/>
+    return (<div className={'d-flex flex-column'}>
+        <div className={getLabelClasses(labelClass)}>{label}</div>
+        <input type={type} className={getClassnameByTheme(theme)} placeholder={placeholder}/>
     </div>)
 }
 
