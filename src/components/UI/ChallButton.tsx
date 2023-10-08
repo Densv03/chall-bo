@@ -3,6 +3,7 @@ import { ButtonThemeEnum } from '../../enums/UI/button-theme.enum';
 interface ChallButtonProps {
   buttonTheme: ButtonThemeEnum;
   children: React.ReactNode;
+  className?: string;
 }
 
 function getClassnameByTheme(theme: ButtonThemeEnum): string {
@@ -13,14 +14,19 @@ function getClassnameByTheme(theme: ButtonThemeEnum): string {
       return '';
   }
 }
+
+function getClassName(theme: ButtonThemeEnum, classname?: string): string {
+  if (!classname) {
+    return getClassnameByTheme(theme);
+  }
+  return `${getClassnameByTheme(theme)} ${classname}`;
+}
 export const ChallButton: React.FC<ChallButtonProps> = ({
   buttonTheme,
   children,
-  ...props
+  className,
 }) => {
   return (
-    <button className={getClassnameByTheme(buttonTheme)} {...props}>
-      {children}
-    </button>
+    <button className={getClassName(buttonTheme, className)}>{children}</button>
   );
 };

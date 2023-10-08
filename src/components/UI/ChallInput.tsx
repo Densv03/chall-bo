@@ -2,7 +2,7 @@ import { InputThemeEnum } from '../../enums/UI/input-theme.enum';
 import { ChangeEventHandler } from 'react';
 
 interface ChallInputProps {
-  type:
+  type?:
     | 'text'
     | 'password'
     | 'number'
@@ -49,7 +49,7 @@ function generateInputWithoutLabel(props: ChallInputProps): React.ReactElement {
   const { type, theme, placeholder, onChange, required } = props;
   return (
     <input
-      type={type}
+      type={type ?? 'text'}
       className={getClassnameByTheme(theme)}
       placeholder={placeholder}
       onChange={onChange}
