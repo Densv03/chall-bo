@@ -4,13 +4,10 @@ import { InputThemeEnum } from '../../enums/UI/input-theme.enum';
 import { ChallButton } from '../UI/ChallButton';
 import { ButtonThemeEnum } from '../../enums/UI/button-theme.enum';
 import '../../styles/components/Login/LoginForm.module.scss';
+import { LoginFormModel } from './models/login-form.model';
+import { LoginFormProps } from './models/login-form-props';
 
-interface LoginFormModel {
-  login: string;
-  password: string;
-}
-
-export const LoginForm = () => {
+export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
   const [loginFormState, setLoginFormState] = useCustomState<LoginFormModel>({
     login: '',
     password: '',
@@ -18,7 +15,7 @@ export const LoginForm = () => {
 
   function submitForm(e: React.FormEvent<HTMLFormElement>): void {
     e.preventDefault();
-    console.log('form submitted', loginFormState);
+    onSubmit(loginFormState);
   }
 
   function updateLoginForm<T extends keyof LoginFormModel>(
@@ -36,7 +33,7 @@ export const LoginForm = () => {
           <ChallInput
             type="text"
             theme={InputThemeEnum.BACKGROUND_WHITE}
-            placeholder="Input your login"
+            placeholder="Enter your login"
             onChange={(e) => updateLoginForm('login', e.target.value)}
             required={true}
             className="w-75"
