@@ -20,6 +20,7 @@ interface ChallInputProps {
   placeholder?: string;
   onChange?: ChangeEventHandler<HTMLInputElement>;
   required?: boolean;
+  className?: string;
 }
 
 function getClassnameByTheme(theme: InputThemeEnum): string {
@@ -28,6 +29,14 @@ function getClassnameByTheme(theme: InputThemeEnum): string {
       return 'input input--white';
     default:
       return '';
+  }
+}
+
+function getInputClasses(className?: string): string {
+  if (!className) {
+    return '';
+  } else {
+    return className;
   }
 }
 
@@ -46,11 +55,11 @@ function generateInputWithLabel(props: ChallInputProps): React.ReactElement {
 }
 
 function generateInputWithoutLabel(props: ChallInputProps): React.ReactElement {
-  const { type, theme, placeholder, onChange, required } = props;
+  const { type, theme, placeholder, onChange, required, className } = props;
   return (
     <input
       type={type ?? 'text'}
-      className={getClassnameByTheme(theme)}
+      className={`${getClassnameByTheme(theme)} ${getInputClasses(className)}`}
       placeholder={placeholder}
       onChange={onChange}
       required={required}
