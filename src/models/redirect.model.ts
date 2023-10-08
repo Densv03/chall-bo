@@ -1,4 +1,4 @@
 export interface RedirectModel {
-    path: string;
-    redirectTo: string;
+  path: string;
+  redirectTo: string;
 }

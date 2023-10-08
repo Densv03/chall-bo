@@ -1,3 +1,3 @@
 export enum ButtonThemeEnum {
-    LIGHT_GRAY = 'btn btn--light-gray'
+  LIGHT_GRAY = 'btn btn--light-gray',
 }
