@@ -1,8 +1,8 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { Login } from '../components/Login';
+import { Login } from '../components/Login/Login';
 import { RouteModel } from '../models/route.model';
 import { Registration } from '../components/Registration';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../services/Auth/auth.service';
 import { NotFound } from '../components/NotFound';
 import React from 'react';
 import { Dashboard } from '../components/Dashboard';

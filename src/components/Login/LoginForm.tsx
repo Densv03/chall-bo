@@ -4,8 +4,8 @@ import { InputThemeEnum } from '../../enums/UI/input-theme.enum';
 import { ChallButton } from '../UI/ChallButton';
 import { ButtonThemeEnum } from '../../enums/UI/button-theme.enum';
 import '../../styles/components/Login/LoginForm.module.scss';
-import { LoginFormModel } from './models/login-form.model';
-import { LoginFormProps } from './models/login-form-props';
+import { LoginFormModel } from '../../models/components/Login/login-form.model';
+import { LoginFormProps } from '../../models/components/Login/login-form-props';
 
 export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
   const [loginFormState, setLoginFormState] = useCustomState<LoginFormModel>({
