@@ -1,3 +1,4 @@
+// Core
 @import './core/reset';
 
 // Shared
@@ -10,3 +11,5 @@
 // Components
 @import './components/Login/Login.module';
 @import './components/Login/LoginForm.module';
+@import './components/Sidenav';
+@import './components/Main';

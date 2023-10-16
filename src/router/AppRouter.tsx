@@ -1,9 +1,9 @@
+import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { Login } from '../components/Login/Login';
 import { Registration } from '../components/Registration';
 import { AuthService } from '../services/Auth/auth.service';
 import { NotFound } from '../components/NotFound';
-import React from 'react';
 import { UserList } from '../components/Users/UserList';
 import { UserDetails } from '../components/Users/UserDetails';
 import { Main } from '../components/core/Main';

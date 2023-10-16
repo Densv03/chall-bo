@@ -1,3 +1,3 @@
 export const DeleteOrganizationList = () => {
-  return <div>Delete organization works</div>;
+  return <div>Delete organization list works</div>;
 };

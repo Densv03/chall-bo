@@ -1,3 +1,3 @@
 export const CreateOrganizationList = () => {
-  return <div>Create organization works</div>;
+  return <div>Create organization list works</div>;
 };

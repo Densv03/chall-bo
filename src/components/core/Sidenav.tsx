@@ -1,26 +1,50 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export const Sidenav = () => {
+  const location = useLocation();
+  function getLinkClassName(path: string, fullMatch: boolean = true): string {
+    if (location.pathname === path && fullMatch) {
+      return 'sidenav-link sidenav-link--active';
+    } else if (!fullMatch && location.pathname.includes(path)) {
+      return 'sidenav-link sidenav-link--active';
+    }
+    return 'sidenav-link';
+  }
+
   return (
-    <ul
-      className="sidenav"
-      style={{ display: 'flex', flexDirection: 'column' }}>
+    <ul>
       <li>
-        <Link to="/users/list">Users</Link>
+        <Link to="/users/list">
+          <span className={getLinkClassName('/users/list')}>Users</span>
+        </Link>
       </li>
       <li>
-        <Link to="/organizations/create">Organizations</Link>
+        <Link to="/organizations/create">
+          <span className={getLinkClassName('organizations', false)}>
+            Organizations
+          </span>
+        </Link>
         <ul>
           <li>
-            <Link to="/organizations/create">Create</Link>
+            <Link to="/organizations/create">
+              <span className={getLinkClassName('/organizations/create')}>
+                Create
+              </span>
+            </Link>
           </li>
           <li>
-            <Link to="/organizations/delete">Delete</Link>
+            <Link to="/organizations/delete">
+              <span className={getLinkClassName('/organizations/delete')}>
+                Delete
+              </span>
+            </Link>
           </li>
         </ul>
       </li>
       <li>
-        <Link to="/reports">Reports</Link>
+        <Link to="/reports">
+          <span className={getLinkClassName('/reports')}>Reports</span>
+        </Link>
       </li>
     </ul>
   );

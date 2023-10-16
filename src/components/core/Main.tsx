@@ -3,11 +3,11 @@ import { Outlet } from 'react-router-dom';
 
 export const Main = () => {
   return (
-    <div className="main" style={{ display: 'flex' }}>
+    <div className="main d-flex">
       <div className="sidenav">
         <Sidenav />
       </div>
-      <div className="page">
+      <div className="main-wrapper-page">
         <Outlet />
       </div>
     </div>
