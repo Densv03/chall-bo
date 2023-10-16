@@ -14,7 +14,7 @@ export const Login = () => {
         return data.data;
       })
       .then(() => {
-        navigate('/dashboard');
+        navigate('/users');
       });
   }
 
