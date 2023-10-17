@@ -1,21 +1,21 @@
-import { ButtonThemeEnum } from '../../enums/UI/button-theme.enum';
+import { ChallButtonThemeEnum } from '../../enums/UI/chall-button-theme.enum';
 
 interface ChallButtonProps {
-  buttonTheme: ButtonThemeEnum;
+  buttonTheme: ChallButtonThemeEnum;
   children: React.ReactNode;
   className?: string;
 }
 
-function getClassnameByTheme(theme: ButtonThemeEnum): string {
+function getClassnameByTheme(theme: ChallButtonThemeEnum): string {
   switch (theme) {
-    case ButtonThemeEnum.LIGHT_GRAY:
+    case ChallButtonThemeEnum.LIGHT_GRAY:
       return 'btn btn--light-gray';
     default:
       return '';
   }
 }
 
-function getClassName(theme: ButtonThemeEnum, classname?: string): string {
+function getClassName(theme: ChallButtonThemeEnum, classname?: string): string {
   if (!classname) {
     return getClassnameByTheme(theme);
   }

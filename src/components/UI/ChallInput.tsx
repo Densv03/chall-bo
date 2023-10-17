@@ -1,4 +1,4 @@
-import { InputThemeEnum } from '../../enums/UI/input-theme.enum';
+import { ChallInputThemeEnum } from '../../enums/UI/chall-input-theme.enum';
 import { ChangeEventHandler } from 'react';
 
 interface ChallInputProps {
@@ -16,17 +16,19 @@ interface ChallInputProps {
     | 'button';
   label?: string;
   labelClass?: string;
-  theme: InputThemeEnum;
+  theme: ChallInputThemeEnum;
   placeholder?: string;
   onChange?: ChangeEventHandler<HTMLInputElement>;
   required?: boolean;
   className?: string;
 }
 
-function getClassnameByTheme(theme: InputThemeEnum): string {
+function getClassnameByTheme(theme: ChallInputThemeEnum): string {
   switch (theme) {
-    case InputThemeEnum.BACKGROUND_WHITE:
+    case ChallInputThemeEnum.BACKGROUND_WHITE:
       return 'input input--white';
+    case ChallInputThemeEnum.BACKGROUND_GRAY:
+      return 'input input--gray';
     default:
       return '';
   }

@@ -1,4 +1,5 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthService } from '../../services/Auth/auth.service';
 
 export const Sidenav = () => {
   const location = useLocation();
@@ -10,6 +11,8 @@ export const Sidenav = () => {
     }
     return 'sidenav-link';
   }
+
+  const navigate = useNavigate();
 
   return (
     <ul>
@@ -45,6 +48,13 @@ export const Sidenav = () => {
         <Link to="/reports">
           <span className={getLinkClassName('/reports')}>Reports</span>
         </Link>
+      </li>
+      <li
+        onClick={() => {
+          AuthService.logout();
+          navigate('/login');
+        }}>
+        <span className="sidenav-link">Log out</span>
       </li>
     </ul>
   );

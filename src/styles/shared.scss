@@ -2,8 +2,9 @@
 @import './core/reset';
 
 // Shared
-@import './shared/buttons.module';
-@import './shared/input.module';
+@import 'UI/ChallButton';
+@import 'UI/ChallInput';
+@import 'UI/ChallIcon';
 
 // Colors
 @import './colors/light-theme';
@@ -11,5 +12,7 @@
 // Components
 @import './components/Login/Login.module';
 @import './components/Login/LoginForm.module';
+@import './components/Users/UserList';
 @import './components/Sidenav';
 @import './components/Main';
+@import './components/shared/SortBy';

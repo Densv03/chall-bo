@@ -1,8 +1,8 @@
 import { useCustomState } from '../../hooks/useCustomState.hook';
 import { ChallInput } from '../UI/ChallInput';
-import { InputThemeEnum } from '../../enums/UI/input-theme.enum';
+import { ChallInputThemeEnum } from '../../enums/UI/chall-input-theme.enum';
 import { ChallButton } from '../UI/ChallButton';
-import { ButtonThemeEnum } from '../../enums/UI/button-theme.enum';
+import { ChallButtonThemeEnum } from '../../enums/UI/chall-button-theme.enum';
 import '../../styles/components/Login/LoginForm.module.scss';
 import { LoginFormModel } from '../../models/components/Login/login-form.model';
 import { LoginFormProps } from '../../models/components/Login/login-form-props';
@@ -32,7 +32,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
           <p>Login</p>
           <ChallInput
             type="text"
-            theme={InputThemeEnum.BACKGROUND_WHITE}
+            theme={ChallInputThemeEnum.BACKGROUND_WHITE}
             placeholder="Enter your login"
             onChange={(e) => updateLoginForm('login', e.target.value)}
             required={true}
@@ -43,14 +43,14 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
           <p>Password</p>
           <ChallInput
             type="password"
-            theme={InputThemeEnum.BACKGROUND_WHITE}
+            theme={ChallInputThemeEnum.BACKGROUND_WHITE}
             placeholder="Enter your password"
             onChange={(e) => updateLoginForm('password', e.target.value)}
             required={true}
             className="w-75"
           />
         </div>
-        <ChallButton buttonTheme={ButtonThemeEnum.LIGHT_GRAY}>
+        <ChallButton buttonTheme={ChallButtonThemeEnum.LIGHT_GRAY}>
           Log in
         </ChallButton>
       </form>
