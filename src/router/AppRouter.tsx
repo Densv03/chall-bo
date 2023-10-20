@@ -15,6 +15,7 @@ import { ReportList } from '../components/Reports/ReportList';
 import { RouteAction } from '../models/route-action.model';
 import { RedirectAction } from '../models/redirect-action.model';
 import { AppActionType } from '../enums/app-action-type.enum';
+import { OrganizationList } from '../components/Organizations/OrganizationList';
 
 type AppAction = RedirectAction | RouteAction;
 
@@ -100,13 +101,17 @@ export const AppRouter = () => {
       element: <Main />,
       children: [
         {
-          path: 'create',
-          element: <CreateOrganizationList />,
+          path: '',
+          element: <OrganizationList />,
         },
-        {
-          path: 'delete',
-          element: <DeleteOrganizationList />,
-        },
+        // {
+        //   path: 'create',
+        //   element: <CreateOrganizationList />,
+        // },
+        // {
+        //   path: 'delete',
+        //   element: <DeleteOrganizationList />,
+        // },
         {
           path: 'create/:id',
           element: <CreateOrganizationDetails />,

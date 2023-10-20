@@ -22,27 +22,27 @@ export const Sidenav = () => {
         </Link>
       </li>
       <li>
-        <Link to="/organizations/create">
+        <Link to="/organizations">
           <span className={getLinkClassName('organizations', false)}>
             Organizations
           </span>
         </Link>
-        <ul>
-          <li>
-            <Link to="/organizations/create">
-              <span className={getLinkClassName('/organizations/create')}>
-                Create
-              </span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/organizations/delete">
-              <span className={getLinkClassName('/organizations/delete')}>
-                Delete
-              </span>
-            </Link>
-          </li>
-        </ul>
+        {/*<ul>*/}
+        {/*  <li>*/}
+        {/*    <Link to="/organizations/create">*/}
+        {/*      <span className={getLinkClassName('/organizations/create')}>*/}
+        {/*        Create*/}
+        {/*      </span>*/}
+        {/*    </Link>*/}
+        {/*  </li>*/}
+        {/*  <li>*/}
+        {/*    <Link to="/organizations/delete">*/}
+        {/*      <span className={getLinkClassName('/organizations/delete')}>*/}
+        {/*        Delete*/}
+        {/*      </span>*/}
+        {/*    </Link>*/}
+        {/*  </li>*/}
+        {/*</ul>*/}
       </li>
       <li>
         <Link to="/reports">
