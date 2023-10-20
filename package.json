@@ -12,6 +12,7 @@
     "@types/react-dom": "^18.2.10",
     "axios": "^1.5.1",
     "chroma-js": "^2.4.2",
+    "lodash.debounce": "^4.0.8",
     "node-sass": "^7.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -50,6 +51,7 @@
   },
   "devDependencies": {
     "@types/chroma-js": "^2.4.1",
+    "@types/lodash.debounce": "^4.0.8",
     "husky": "^8.0.3",
     "prettier": "^3.0.3"
   }

@@ -1,11 +1,74 @@
+import React, { useEffect } from 'react';
 import { ChallInput } from '../UI/ChallInput';
 import { ChallInputThemeEnum } from '../../enums/UI/chall-input-theme.enum';
 import { SortBy } from '../shared/SortBy';
+import Pagination from '../shared/Pagination';
+import { useCustomState } from '../../hooks/useCustomState.hook';
+import debounce from 'lodash/debounce';
+
+interface UserListState {
+  sortBy: 'asc' | 'desc';
+  page: number;
+  q: string;
+}
 
 export const UserList = () => {
-  function changeSortBy(direction: 'asc' | 'desc'): void {
-    console.log('direction', direction);
+  const [userListState, setUserListState] = useCustomState<UserListState>({
+    sortBy: 'asc',
+    page: 1,
+    q: '',
+  });
+
+  useEffect(() => {
+    updateUsersList();
+  }, [userListState]);
+
+  function updateUserListState<K extends keyof UserListState>(
+    key: K,
+    value: UserListState[K]
+  ): void {
+    setUserListState({ ...userListState, [key]: value });
   }
+
+  function changeSortBy(direction: 'asc' | 'desc'): void {
+    updateUserListState('sortBy', direction);
+  }
+
+  function togglePage(page: number): void {
+    updateUserListState('page', page);
+  }
+
+  const debouncedUpdateSearchQuery = debounce((value: string) => {
+    updateUserListState('q', value);
+  }, 300);
+
+  function updateUsersList(): void {
+    // Fetch users
+    console.log('fetch', userListState);
+  }
+
+  const items = [
+    'one',
+    'two',
+    'three',
+    'four',
+    'five',
+    'six',
+    'seven',
+    'eight',
+    'nine',
+    'ten',
+    '11',
+    '12',
+    '13',
+    '14',
+    '15',
+    '16',
+    '17',
+    '18',
+    '19',
+    '20',
+  ];
 
   return (
     <div className="user-list-wrapper">
@@ -13,9 +76,13 @@ export const UserList = () => {
         theme={ChallInputThemeEnum.BACKGROUND_GRAY}
         placeholder="Search"
         className="w-100 px-3"
+        onChange={(e) => debouncedUpdateSearchQuery(e.target.value)}
       />
       <div className="sort-by-wrapper">
-        <SortBy onSortChange={changeSortBy} />
+        <SortBy onSortChange={changeSortBy} initialDirection={'asc'} />
+      </div>
+      <div className="user-list-pagination">
+        <Pagination items={items} itemsPerPage={2} togglePage={togglePage} />
       </div>
     </div>
   );

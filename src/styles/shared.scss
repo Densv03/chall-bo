@@ -1,5 +1,6 @@
 // Core
 @import './core/reset';
+@import './core/mixin';
 
 // Shared
 @import 'UI/ChallButton';
@@ -16,3 +17,4 @@
 @import './components/Sidenav';
 @import './components/Main';
 @import './components/shared/SortBy';
+@import './components/shared/Pagination';

@@ -11,7 +11,7 @@ export function useCustomState<T>(
     const initialCustomState = {} as CustomState<T>;
     for (const key in initialState) {
       if (Object.prototype.hasOwnProperty.call(initialState, key)) {
-        initialCustomState[key] = '';
+        initialCustomState[key] = initialState[key] as string;
       }
     }
     return initialCustomState;

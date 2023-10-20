@@ -1,11 +1,6 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-# Run Prettier to format files
 npm run format
 
-# Stage the changes made by Prettier
-git diff --name-only --cached --diff-filter=AM | xargs git add
-
-# Proceed with the commit
-npm run format
+git add .
